@@ -8,6 +8,7 @@ const groupRoutes = require('./routes/groupRoutes');
 const expenseRoutes = require('./routes/expenseRoutes');
 const summaryRoutes = require('./routes/summaryRoutes');
 const settlementRoutes = require('./routes/settlementRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 dotenv.config({ path: path.join(__dirname, 'config/.env') });
 
@@ -23,6 +24,7 @@ app.use('/api/groups', groupRoutes);
 app.use('/api/expenses', expenseRoutes);
 app.use('/api/summary', summaryRoutes);
 app.use('/api/settlements', settlementRoutes);
+app.use('/api/auth', authRoutes);
 
 app.get('/health', (req, res) => res.json({ ok: true }));
 
