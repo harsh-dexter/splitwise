@@ -14,14 +14,19 @@ server/
       db.js
       .env (not checked in)
     controllers/
+      authController.js
       groupController.js
       expenseController.js
       summaryController.js
       settlementController.js
+    middleware/
+      auth.js
     models/
+      User.js
       Group.js
       Expense.js
     routes/
+      authRoutes.js
       groupRoutes.js
       expenseRoutes.js
       summaryRoutes.js
@@ -44,10 +49,13 @@ client/
     api/
       api.js
     components/
+      auth/LoginForm.jsx
+      auth/RegisterForm.jsx
       common/Modal.jsx
       common/LoadingSpinner.jsx
       dashboard/GroupCard.jsx
       dashboard/CreateGroupModal.jsx
+      dashboard/EditGroupModal.jsx
       details/AddExpenseForm.jsx
       details/BalanceSummary.jsx
       details/ExpenseList.jsx
@@ -55,6 +63,10 @@ client/
     pages/
       GroupDashboardPage.jsx
       GroupDetailPage.jsx
+      JoinPage.jsx
+      LandingPage.jsx
+      LoginPage.jsx
+      RegisterPage.jsx
 ```
 
 ## Prerequisites
@@ -104,6 +116,8 @@ Client runs on `http://localhost:3000` (Vite). A dev proxy forwards `/api` to th
 If styles don’t appear, restart Vite and ensure the CSS is imported in `src/main.jsx`.
 
 ## API Summary
+- `POST /api/auth/register` → register a new user `{ username, email, password }`
+- `POST /api/auth/login` → login a user `{ email, password }`
 - `GET /api/groups` → list groups
 - `POST /api/groups` → create group `{ name, members[] }`
 - `GET /api/groups/:id` → group details with `expenses[]`
@@ -113,6 +127,7 @@ If styles don’t appear, restart Vite and ensure the CSS is imported in `src/ma
 - `GET /api/settlements/:groupId` → suggested settlements
 
 ## Tech Notes
+- **Authentication:** Uses JWT for user authentication. Tokens are sent with requests via `Authorization` header.
 - Axios client at `client/src/api/api.js` with baseURL from `VITE_API_URL`.
 - Vite dev server proxies `/api` to `http://localhost:5000` (see `client/vite.config.js`).
 - Mongoose models in `server/src/models`.
