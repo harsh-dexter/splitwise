@@ -1,0 +1,19 @@
+# Node.js
+node_modules/
+.env
+
+# Vite / React
+client/dist/
+
+# Server
+server/dist/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
