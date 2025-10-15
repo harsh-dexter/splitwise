@@ -52,7 +52,7 @@ export default function GroupDetailPage({ group, onBack, onAddExpense, onEditGro
     };
 
     fetchDetails();
-  }, [group._id, group.expenses]);
+  }, [group._id, group.expenses]); // Re-fetch details when group.expenses changes
 
   return (
     <>
@@ -60,14 +60,14 @@ export default function GroupDetailPage({ group, onBack, onAddExpense, onEditGro
         <button onClick={onBack} className="p-2 rounded-full hover:bg-slate-200 transition-colors mr-3">
           <ArrowLeftIcon className="w-6 h-6 text-slate-600"/>
         </button>
-        <h2 className="text-3xl font-bold text-slate-800 truncate">{group.name}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-slate-800 truncate">{group.name}</h2>
         <div className="ml-auto flex items-center gap-2">
           <button onClick={() => setEditModalOpen(true)}
-                  className="flex items-center bg-white text-slate-700 font-medium py-2 px-4 rounded-lg border border-slate-300 hover:bg-slate-50">
+                  className="inline-flex items-center justify-center rounded-xl bg-white border border-slate-300 px-5 py-2.5 text-slate-700 font-semibold shadow-sm hover:bg-slate-50 transition-all focus:outline-none focus:ring-2 focus:ring-teal-500/60">
             Edit
           </button>
           <button onClick={() => setAddModalOpen(true)}
-                  className="flex items-center bg-sky-500 text-white font-bold py-2 px-4 rounded-lg shadow-sm hover:bg-sky-600 transition-all duration-300 transform hover:scale-105">
+                  className="inline-flex items-center justify-center rounded-xl bg-teal-600 px-5 py-2.5 text-white font-semibold shadow-sm hover:bg-teal-700 active:bg-teal-700/90 transition-all focus:outline-none focus:ring-2 focus:ring-teal-500/60">
             <PlusIcon className="w-5 h-5 mr-2" />
             Add Expense
           </button>
@@ -101,5 +101,3 @@ export default function GroupDetailPage({ group, onBack, onAddExpense, onEditGro
     </>
   );
 }
-
-

@@ -11,19 +11,20 @@ function UsersIcon({ className }) {
   );
 }
 
-export default function GroupCard({ group, onSelectGroup }) {
+export default function GroupCard({ group, onSelectGroup, onInvite }) {
   return (
     <div onClick={() => onSelectGroup(group._id)}
-         className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer border border-slate-200/80 transform hover:-translate-y-1">
+         className="bg-white rounded-2xl shadow-[0_10px_30px_-12px_rgba(0,0,0,.25)] hover:shadow-lg transition-all duration-300 cursor-pointer border border-slate-200 transform hover:scale-[1.01]">
       <div className="p-6">
         <h3 className="text-lg font-bold text-slate-800 mb-2 truncate">{group.name}</h3>
         <div className="flex items-center text-slate-500 text-sm mb-4">
           <UsersIcon className="w-4 h-4 mr-2"/>
           <span>{group.members.length} members</span>
         </div>
+        <div className="flex justify-end">
+          <button onClick={(e) => { e.stopPropagation(); onInvite?.(group._id); }} className="text-sm text-teal-600 hover:text-teal-700">Invite</button>
+        </div>
       </div>
     </div>
   );
 }
-
-

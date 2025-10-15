@@ -24,17 +24,17 @@ export default function CreateGroupModal({ isOpen, onClose, onCreateGroup }) {
                 <div>
                     <label htmlFor="group-name" className="block text-sm font-medium text-slate-700">Group Name</label>
                     <input type="text" id="group-name" value={name} onChange={(e) => setName(e.target.value)} required
-                        className="mt-1 block w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500"/>
+                        className="mt-1 w-full rounded-lg border border-slate-300 bg-slate-50 px-3 py-2 text-slate-900 placeholder-slate-400 shadow-sm focus:border-teal-500 focus:ring-2 focus:ring-teal-500/60 transition"/>
                 </div>
                 <div>
                     <label htmlFor="group-members" className="block text-sm font-medium text-slate-700">Members (comma-separated)</label>
                     <input type="text" id="group-members" value={members} onChange={(e) => setMembers(e.target.value)} required
                         placeholder="e.g., Alice, Bob, Carol"
-                        className="mt-1 block w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500"/>
+                        className="mt-1 w-full rounded-lg border border-slate-300 bg-slate-50 px-3 py-2 text-slate-900 placeholder-slate-400 shadow-sm focus:border-teal-500 focus:ring-2 focus:ring-teal-500/60 transition"/>
                 </div>
                 <div className="pt-4 flex justify-end">
                     <button type="submit"
-                        className="inline-flex justify-center py-2 px-5 border border-transparent shadow-sm text-sm font-medium rounded-lg text-white bg-sky-500 hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 transition-all transform hover:scale-105">
+                        className="inline-flex items-center justify-center rounded-xl bg-teal-600 px-5 py-2.5 text-white font-semibold shadow-sm hover:bg-teal-700 active:bg-teal-700/90 transition-all focus:outline-none focus:ring-2 focus:ring-teal-500/60">
                         Create
                     </button>
                 </div>
@@ -42,5 +42,3 @@ export default function CreateGroupModal({ isOpen, onClose, onCreateGroup }) {
         </Modal>
     );
 }
-
-

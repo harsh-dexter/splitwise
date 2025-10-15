@@ -29,7 +29,7 @@ export default function EditGroupModal({ isOpen, onClose, group, onSave }) {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="mt-1 block w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500"
+            className="mt-1 w-full rounded-lg border border-slate-300 bg-slate-50 px-3 py-2 text-slate-900 placeholder-slate-400 shadow-sm focus:border-teal-500 focus:ring-2 focus:ring-teal-500/60 transition"
           />
         </div>
         <div>
@@ -38,17 +38,14 @@ export default function EditGroupModal({ isOpen, onClose, group, onSave }) {
             type="text"
             value={membersInput}
             onChange={(e) => setMembersInput(e.target.value)}
-            className="mt-1 block w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg shadow-sm focus:outline-none focus:ring-sky-500 focus:border-sky-500"
+            className="mt-1 w-full rounded-lg border border-slate-300 bg-slate-50 px-3 py-2 text-slate-900 placeholder-slate-400 shadow-sm focus:border-teal-500 focus:ring-2 focus:ring-teal-500/60 transition"
           />
         </div>
         <div className="pt-4 flex justify-end gap-2">
-          <button type="button" onClick={onClose} className="py-2 px-4 rounded-lg border border-slate-300 text-slate-700 bg-white hover:bg-slate-50">Cancel</button>
-          <button type="submit" className="py-2 px-5 rounded-lg text-white bg-sky-500 hover:bg-sky-600">Save</button>
+          <button type="button" onClick={onClose} className="inline-flex items-center justify-center rounded-xl bg-white border border-slate-300 px-5 py-2.5 text-slate-700 font-semibold shadow-sm hover:bg-slate-50 transition-all focus:outline-none focus:ring-2 focus:ring-teal-500/60">Cancel</button>
+          <button type="submit" className="inline-flex items-center justify-center rounded-xl bg-teal-600 px-5 py-2.5 text-white font-semibold shadow-sm hover:bg-teal-700 active:bg-teal-700/90 transition-all focus:outline-none focus:ring-2 focus:ring-teal-500/60">Save</button>
         </div>
       </form>
     </Modal>
   );
 }
-
-
-

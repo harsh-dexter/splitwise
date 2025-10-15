@@ -18,7 +18,7 @@ export default function ExpenseList({ expenses }) {
         {expenses && [...expenses].sort((a,b) => new Date(b.date) - new Date(a.date)).map(exp => (
           <li key={exp._id} className="flex items-center justify-between p-3 bg-slate-50 rounded-lg">
             <div className="flex items-center">
-              <div className="bg-sky-100 text-sky-600 rounded-full p-2 mr-4">
+              <div className="bg-teal-100 text-teal-600 rounded-full p-2 mr-4">
                 <ReceiptIcon className="w-5 h-5"/>
               </div>
               <div>
@@ -38,5 +38,3 @@ export default function ExpenseList({ expenses }) {
     </div>
   );
 }
-
-
